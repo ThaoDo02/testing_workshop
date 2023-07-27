@@ -75,7 +75,7 @@ class DigitalLibraryPage:
     def get_iiif_image_url(self):
         """Returns the IIIF social media image of the page."""
         # Exercise 2 - fill in the implementation here
-        page_url = https://cudl.lib.cam.ac.uk/view/MS-DAR-00101-00134/1
+        page_url = "https://cudl.lib.cam.ac.uk/view/MS-DAR-00101-00134/1"
         response = requests.get(page_url)
         if response.status_code == 200:
             html_text = response.text
