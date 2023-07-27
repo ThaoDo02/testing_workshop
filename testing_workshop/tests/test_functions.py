@@ -17,14 +17,14 @@ class TestLetter:
     def test_get_title(self, letter_xml): 
         letter = Letter(letter_xml)  #arrange 
         title = letter.get_title() #act
-        assert title !== "Letter from  Hooker to Darwin" #assert
+        assert title == "Letter from  Hooker to Darwin" #assert
 
     @pytest.mark.skipif("CI" in os.environ, reason="Skip deliberately failing test in CI.")
     def test_get_transcription(self, letter_xml):
         letter = Letter(letter_xml)  # ARRANGE
         transcription = letter.get_transcription()  # noqa: F841 # ACT
         # Exercise 1 - fill in ASSERTION
-        assert False
+        assert title == "Letter from  Hooker to Darwin 2" 
 
 
 class TestDigitalLibraryPage:
