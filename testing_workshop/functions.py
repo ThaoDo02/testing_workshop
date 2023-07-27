@@ -41,7 +41,6 @@ class Letter:
     def get_transcription(self):
         return self._transcription
 
-
 class DigitalLibraryPage:
     """
     The page of an item in Cambridge Digital Library.
@@ -76,8 +75,13 @@ class DigitalLibraryPage:
     def get_iiif_image_url(self):
         """Returns the IIIF social media image of the page."""
         # Exercise 2 - fill in the implementation here
-        pass
-
+        page_url = https://cudl.lib.cam.ac.uk/view/MS-DAR-00101-00134/1
+        response = requests.get(page_url)
+        if response.status_code == 200:
+            html_text = response.text
+            soup = BeautifulSoup(html_text,'html.parser')
+            iiif_image_url = soup.head.find(property="og:image")['content']
+            return  iiif_image_url
 
 class NamedEntityDocument:
     """
