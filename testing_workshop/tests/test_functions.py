@@ -14,10 +14,10 @@ from testing_workshop.functions import DigitalLibraryPage, Letter
 
 
 class TestLetter:
-    def test_get_title(self, letter_xml):
-        letter = Letter(letter_xml)
-        title = letter.get_title()
-        assert title == "Letter from  Hooker to Darwin"
+    def test_get_title(self, letter_xml): 
+        letter = Letter(letter_xml)  #arrange 
+        title = letter.get_title() #act
+        assert title !== "Letter from  Hooker to Darwin" #assert
 
     @pytest.mark.skipif("CI" in os.environ, reason="Skip deliberately failing test in CI.")
     def test_get_transcription(self, letter_xml):
