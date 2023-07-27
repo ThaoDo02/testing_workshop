@@ -24,10 +24,10 @@ class TestLetter:
         letter = Letter(letter_xml)  # ARRANGE
         transcription = letter.get_transcription()  # noqa: F841 # ACT
         # Exercise 1 - fill in ASSERTION
-        assert transcription == "Letter from  Hooker to Darwin 2" 
+        assert transcription == "Many thanks indeed for your letter. It was most kind and I am immensely gratified." 
 
 
-class TestDigitalLibraryPage:
+class TestDigitalLibraryPage: 
     def test_get_metadata_url_from_digital_library_url(self, page_url_valid, metadata_url_valid):
         page = DigitalLibraryPage(page_url_valid)
         metadata_url = page.get_metadata_url()
